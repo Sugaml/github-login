@@ -3,6 +3,7 @@ package handler
 import (
 	"context"
 	"net/http"
+	"os"
 
 	"github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
@@ -11,8 +12,8 @@ import (
 
 var (
 	oauthConf = &oauth2.Config{
-		ClientID:     "8560c194400c5c463823",
-		ClientSecret: "678e55364c21e8b823de404b5f3005904f1f9797",
+		ClientID:     os.Getenv("CLIENT_ID"),
+		ClientSecret: os.Getenv("CLIENT_SECRET"),
 		Endpoint:     github_endpoint.Endpoint,
 		Scopes: []string{
 			"repo",

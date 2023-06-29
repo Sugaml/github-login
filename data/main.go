@@ -3,12 +3,19 @@ package main
 import (
 	"context"
 
+	"github.com/joho/godotenv"
 	"github.com/sugaml/github-oauth/src"
 
 	"github.com/sirupsen/logrus"
 )
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		logrus.Fatalf("error getting env, not coming through %v", err)
+	}
+	logrus.Info("successfully load env values...")
+
 	// code := "c0839352ef6fc8d15e82"
 	ctx := context.Background()
 	token := "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"

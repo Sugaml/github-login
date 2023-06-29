@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/google/go-github v17.0.0+incompatible
+	github.com/joho/godotenv v1.5.1
 	github.com/sirupsen/logrus v1.9.3
 	golang.org/x/oauth2 v0.9.0
 )
