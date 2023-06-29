@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"os"
 
 	"github.com/joho/godotenv"
 	"github.com/sugaml/github-oauth/src"
@@ -16,9 +17,9 @@ func main() {
 	}
 	logrus.Info("successfully load env values...")
 
-	// code := "c0839352ef6fc8d15e82"
+	// code := ""
 	ctx := context.Background()
-	token := "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"
+	token := os.Getenv("ACCESS_TOKEN")
 	// token, err := utils.CodeToAuthToken(code)
 	// if err != nil {
 	// 	logrus.Error("token get issue :: ", err)
